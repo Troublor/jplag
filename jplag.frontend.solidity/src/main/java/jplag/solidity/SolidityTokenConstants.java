@@ -40,7 +40,6 @@ public interface SolidityTokenConstants extends jplag.TokenConstants {
     final static int RETURN = 57;
     final static int BREAK = 58;
     final static int CONTINUE = 59;
-    // TODO REQUIRE STMT not included in Grammar
     final static int REQUIRE = 60;
 
 

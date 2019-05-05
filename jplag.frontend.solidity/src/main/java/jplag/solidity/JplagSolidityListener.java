@@ -298,6 +298,16 @@ public class JplagSolidityListener implements SolidityListener, SolidityTokenCon
     }
 
     @Override
+    public void enterRequireStatement(SolidityParser.RequireStatementContext ctx) {
+        jplagParser.add(REQUIRE, ctx.getStart());
+    }
+
+    @Override
+    public void exitRequireStatement(SolidityParser.RequireStatementContext ctx) {
+
+    }
+
+    @Override
     public void enterFunctionTypeParameterList(SolidityParser.FunctionTypeParameterListContext ctx) {
 
     }

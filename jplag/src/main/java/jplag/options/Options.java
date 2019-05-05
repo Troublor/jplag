@@ -42,6 +42,7 @@ public abstract class Options {
 			"char", "jplag.chars.Language",
 			"text", "jplag.text.Language",
 			"scheme", "jplag.scheme.Language",
+			"solidity", "jplag.solidity.Language",
 			};// @formatter:on
 
 	public static final int MIN_CLUSTER = 1;

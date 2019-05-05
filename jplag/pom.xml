@@ -229,5 +229,10 @@
             <groupId>edu.kit.ipd.jplag</groupId>
             <artifactId>chars</artifactId>
         </dependency>
+        <dependency>
+            <groupId>edu.kit.ipd.jplag</groupId>
+            <artifactId>solidity</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
     </dependencies>
 </project>

@@ -65,7 +65,7 @@
 				<configuration>
 					<archive>
 						<manifest>
-							<mainClass>jplag.python3.Parser</mainClass>
+							<mainClass>jplag.Parser</mainClass>
 							<packageName>jplag.python3</packageName>
 						</manifest>
 					</archive>

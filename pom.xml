@@ -22,6 +22,7 @@
 		<module>jplag.frontend.scheme</module>
 		<module>jplag.frontend.text</module>
 		<module>jplag.utils</module>
+		<module>jplag.frontend.solidity</module>
 		<module>jplag</module>
 	</modules>
 	<dependencyManagement>

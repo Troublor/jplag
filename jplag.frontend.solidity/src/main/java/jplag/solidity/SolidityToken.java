@@ -1,6 +1,11 @@
 package jplag.solidity;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class SolidityToken extends jplag.Token implements SolidityTokenConstants {
+    private static Integer serialCount = 0;
+    private static Map<Integer, String> serialMap = new HashMap<>();
 
     private int line, column, length;
 
@@ -18,8 +23,11 @@ public class SolidityToken extends jplag.Token implements SolidityTokenConstants
     }
 
     private int serialize(String text) {
-            // TODO literal token serialization
-        return -1;
+        int baseSerialCount = 100;
+        var serial = baseSerialCount + SolidityToken.serialCount;
+        SolidityToken.serialMap.put(serial, text);
+        SolidityToken.serialCount++;
+        return serial;
     }
 
     public int getLine() {

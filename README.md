@@ -39,7 +39,8 @@ options are:
  -bc <dir>       Name of the directory which contains the basecode (common framework)
  -c [files]      Compare a list of files.
  -l <language>   (Language) Supported Languages:
-                 java19 (default), java 17, java15, java15dm, java12, java11, python3, c/c++, c#-1.2, char, text, scheme
+                 java19 (default), java 17, java15, java15dm, java12, java11, python3, c/c++, c#-1.2, char, text, 
+                 scheme, solidity
 ```
 
 **Note:** java19 refers to all java version from 9 on (currently 9 - 12).

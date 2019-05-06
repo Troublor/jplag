@@ -24,7 +24,7 @@ public class Submission implements Comparable<Submission> {
 
 	private boolean readSubDirs;
 
-	private Language language;
+	protected Language language;
 
 	public File dir;
 
@@ -74,6 +74,18 @@ public class Submission implements Comparable<Submission> {
 				program.print("  " + files[i] + '\n', null);
 		}
 	}
+
+	public Submission(String name, File dir, Language language) {
+		this.language = language;
+		this.program = null;
+		this.dir = dir;
+		this.name = name;
+		this.readSubDirs = false;
+
+		files = new String[1];
+		files[0] = name;
+	}
+
 
 	// recursively read in all the files
 	private void lookupDir(File dir, String subDir) throws Throwable {

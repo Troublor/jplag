@@ -140,7 +140,8 @@ block
   : '{' statement* '}' ;
 
 statement
-  : requireStatement
+  : assertStatement
+  | requireStatement
   | ifStatement
   | whileStatement
   | forStatement
@@ -153,6 +154,9 @@ statement
   | throwStatement
   | emitStatement
   | simpleStatement ;
+
+assertStatement
+  : 'assert' '(' expression ')' ';' ;
 
 requireStatement
   : 'require' '(' expression ( ',' StringLiteral )? ')' ';' ;

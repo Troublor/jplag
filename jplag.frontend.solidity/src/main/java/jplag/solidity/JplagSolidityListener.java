@@ -338,6 +338,16 @@ public class JplagSolidityListener implements SolidityListener, SolidityTokenCon
     }
 
     @Override
+    public void enterAssertStatement(SolidityParser.AssertStatementContext ctx) {
+        jplagParser.add(ASSERT, ctx.getStart());
+    }
+
+    @Override
+    public void exitAssertStatement(SolidityParser.AssertStatementContext ctx) {
+
+    }
+
+    @Override
     public void enterFunctionCall(SolidityParser.FunctionCallContext ctx) {
         jplagParser.add(FUNC_CALL, ctx.getStart());
     }

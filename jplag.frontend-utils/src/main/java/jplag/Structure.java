@@ -13,8 +13,8 @@ import java.io.ObjectOutputStream;
 /** The tokenlist */
 public class Structure implements TokenConstants {
 	public Token[] tokens = new Token[0];
-	Table table = null;
-	int hash_length = -1;
+	public Table table = null;
+	public int hash_length = -1;
 
 	int files; // number of END_FILE tokens
 	private int anzahl;

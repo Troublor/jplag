@@ -30,6 +30,10 @@ public class SolidityToken extends jplag.Token implements SolidityTokenConstants
         return serial;
     }
 
+    public boolean isMarked() { return this.marked; }
+
+    public void setMarked(boolean marked) { this.marked = marked; }
+
     public int getLine() {
         return line;
     }
@@ -122,6 +126,8 @@ public class SolidityToken extends jplag.Token implements SolidityTokenConstants
                 return "CONTINUE        ";
             case SolidityTokenConstants.REQUIRE:
                 return "REQUIRE         ";
+            case SolidityTokenConstants.ASSERT:
+                return "ASSERT          ";
 
             default:
 //                System.err.println("*UNKNOWN: " + type);

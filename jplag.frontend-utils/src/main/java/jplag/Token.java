@@ -8,9 +8,9 @@ abstract public class Token implements TokenConstants, Serializable {
 	public int type;
 	public String file;
 	
-	protected boolean marked;
+	public boolean marked;
 	protected boolean basecode = false;
-	protected int hash = -1;// hash-value. set and used by main algorithm (GSTiling)
+	public int hash = -1;// hash-value. set and used by main algorithm (GSTiling)
 	
 	public Token(int type, String file, int line) {
 		this(type, file, line, -1, -1);

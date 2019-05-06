@@ -8,6 +8,11 @@ public class Language implements jplag.Language {
 
     private jplag.solidity.Parser parser;
 
+    public Language(){
+        this.parser = new jplag.solidity.Parser();
+        this.parser.setProgram(null);
+    }
+
     public Language(ProgramI program) {
         this.parser = new jplag.solidity.Parser();
         this.parser.setProgram(program);

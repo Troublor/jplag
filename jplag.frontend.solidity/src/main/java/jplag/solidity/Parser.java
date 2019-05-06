@@ -65,7 +65,7 @@ public class Parser extends jplag.Parser implements SolidityTokenConstants {
         struct = new Structure();
         errors = 0;
         for (int i = 0; i < files.length; i++) {
-            getProgram().print(null, "Parsing file " + files[i] + "\n");
+//            getProgram().print(null, "Parsing file " + files[i] + "\n");
             if (!parseFile(dir, files[i])) {
                 errors++;
             }

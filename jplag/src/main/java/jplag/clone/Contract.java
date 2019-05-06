@@ -7,12 +7,44 @@ import java.lang.reflect.Constructor;
 import java.util.*;
 
 public class Contract extends Submission {
+    public static Language LANGUAGE;
+
+    static {
+        try {
+            Constructor<?>[] languageConstructors = Class.forName("jplag.solidity.Language").getDeclaredConstructors();
+            Constructor<?> cons = languageConstructors[1];
+//            Object[] ob = { program };
+            // All Language have to have a program as Constructor
+            // Parameter
+            // ->public Language(ProgramI prog)
+            Language tmp = (Language) cons.newInstance();
+            LANGUAGE = tmp;
+        } catch (ClassNotFoundException | IllegalAccessException | InstantiationException e) {
+            System.out.println(e.getMessage());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
     private Date createdTime;
     private String author;
+    private String address;
+
+    public String getAddress() {
+        return address;
+    }
 
     @Override
     public String toString() {
         return this.name;
+    }
+
+    public String getName() {
+        return this.name;
+    }
+
+    public File getDir() {
+        return this.dir;
     }
 
     private boolean error;
@@ -29,10 +61,11 @@ public class Contract extends Submission {
         return error;
     }
 
-    public Contract(Language language, File dir, String name) throws IOException, ExitException {
-        super(name, dir, language);
+    public Contract(File dir, String name) throws IOException, ExitException {
+        super(name, dir, LANGUAGE);
+        this.address = name.split("\\.")[0];
 
-        var infoDir = new File("/home/troublor/Desktop/contract_info");
+        var infoDir = new File(Folders.contractInfoDir);
         var inputStream = new FileInputStream(infoDir.getAbsolutePath() + File.separator + name);
         var bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
         var l1 = bufferedReader.readLine();

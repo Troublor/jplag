@@ -12,6 +12,7 @@ import java.util.Vector;
 import jplag.ExitException;
 import jplag.Language;
 import jplag.Program;
+import jplag.ProgramI;
 
 public class CommandLineOptions extends Options {
     private String[] args;
@@ -344,8 +345,8 @@ public class CommandLineOptions extends Options {
 		for (int j = 0; j < languages.length - 1; j += 2)
 			if (languageName.equals(languages[j]))
 				try {
-					Constructor<?>[] languageConstructors = Class.forName(languages[j + 1]).getDeclaredConstructors();
-					Constructor<?> cons = languageConstructors[0];
+					Constructor cons =
+                            Class.forName(languages[j + 1]).getDeclaredConstructor(ProgramI.class);
 					Object[] ob = { program };
 					// All Language have to have a program as Constructor
 					// Parameter

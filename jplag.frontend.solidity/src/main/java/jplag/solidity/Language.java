@@ -19,7 +19,7 @@ public class Language implements jplag.Language {
     }
 
     public String[] suffixes() {
-        String[] res = {".py"};
+        String[] res = {".sol", ".txt"};
         return res;
     }
 

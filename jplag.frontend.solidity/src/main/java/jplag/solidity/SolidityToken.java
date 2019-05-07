@@ -122,7 +122,8 @@ public class SolidityToken extends jplag.Token implements SolidityTokenConstants
                 return "CONTINUE        ";
             case SolidityTokenConstants.REQUIRE:
                 return "REQUIRE         ";
-
+            case SolidityTokenConstants.ASSERT:
+                return "ASSERT          ";
             default:
 //                System.err.println("*UNKNOWN: " + type);
                 return "LITERAL        ";

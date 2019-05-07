@@ -41,7 +41,7 @@ public interface SolidityTokenConstants extends jplag.TokenConstants {
     final static int BREAK = 58;
     final static int CONTINUE = 59;
     final static int REQUIRE = 60;
-
+    final static int ASSERT = 61;
 
 
     final static int NUM_DIFF_TOKENS = 33;
